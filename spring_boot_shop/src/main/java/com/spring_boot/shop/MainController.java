@@ -10,4 +10,18 @@ public class MainController {
 	public String index() {
 		return "index";
 	}
+	
+	/*
+	 * @RequestMapping("/login") public String login() { return "login"; }
+	 * 
+	 * 
+	 * @RequestMapping("/callback") public String callback() { return
+	 * "/loginresult"; }
+	 */
+	
+	
+	@RequestMapping("/join")
+	public String join() {
+		return "join";
+	}
 }
