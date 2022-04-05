@@ -30,7 +30,7 @@
 			              <div id="naver_id_login"><img src="img/naver.png" alt="naver"></div>
 			              <!-- 네이버로그인  -->
 			              <script type="text/javascript">
-						  	var naver_id_login = new naver_id_login("DScCq08roHfAQvUwI7ZD", "http://localhost:8000/loginresult");
+						  	var naver_id_login = new naver_id_login("DScCq08roHfAQvUwI7ZD", "http://localhost:8000/naverSuccess");
 						  	var state = naver_id_login.getUniqState();
 						  	naver_id_login.setButton("white", 2,40);
 						  	naver_id_login.setDomain("http://localhost:8000");

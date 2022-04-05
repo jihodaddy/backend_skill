@@ -6,7 +6,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackageClasses = MainController.class)
-@ComponentScan(basePackageClasses = LoginController.class)
 public class SpringBootShopApplication {
 
 	public static void main(String[] args) {
