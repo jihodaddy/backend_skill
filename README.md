@@ -84,3 +84,6 @@
     - 전체 기능에 대한 테스트 시나리오를 다 수행해보기도 함
 
 참조: <https://d2.naver.com/news/3435170>
+
+## [쿼리작성팁](https://github.com/jihodaddy/spring_boot_mini_project/blob/609b9c9f1da2e0449c24870be5784089f8ff0089/sql_tip.md)
+
