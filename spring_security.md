@@ -16,7 +16,9 @@
 home.html (src/main/resources/templates/home.html)
 ```
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="https://www.thymeleaf.org" 
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
         <title>Spring Security Example</title>
     </head>
@@ -141,3 +143,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     </body>
 </html>
 ```
+
+[참조](https://spring.io/guides/gs/securing-web/)
