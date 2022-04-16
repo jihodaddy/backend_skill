@@ -144,4 +144,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 </html>
 ```
 
-[참조](https://spring.io/guides/gs/securing-web/)
+참조(https://spring.io/guides/gs/securing-web/)
