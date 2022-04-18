@@ -9,4 +9,19 @@
 ## @Table
   - 엔티티와 매핑할 테이블을 지정
   - 생략 시 매핑한 엔티티 이름을 테이블 이름으로 사용
-  - 
+
+## @id
+  - 데이타베이스 의 기본키(Premary Key)
+## @Conlumn
+  - 데이터베이스의 테이블에 있는 컬럼과 동일하게 1:1 매칭되기 때문에
+  - Entity 클래스 안에 내부변수로 정의됨
+## @GenerateVlaue
+  - MySQL의 auto increment, ORACLE의 sequence
+## @EmbeddedId
+  - PK단일키가 아닌 복합키로로 테이블의 PK를 정의 할때 
+  - 먼저 Value를 생성후 @EmbeddedId 어노테이션을 이용해 Value가 Entity에 삽입 가능함 명시
+  - @EmbeddedId 어노테이션을 이용해 Entity에 해당 Value를 PK로 사용한다고 지정
+## @enumerated
+  - java의 enum 형태로 되어있는 코드 값이나 구분값을 데이타 타입으로 사용하고자 할때 사용
+## @Transient
+  - Entity 객체에 임시로 값을 담는 용도로 사용
