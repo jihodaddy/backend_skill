@@ -86,4 +86,4 @@
 참조: <https://d2.naver.com/news/3435170>
 
 ## [쿼리작성팁](https://github.com/jihodaddy/spring_boot_mini_project/blob/609b9c9f1da2e0449c24870be5784089f8ff0089/sql_tip.md)
-
+## [JPA 정리](https://github.com/jihodaddy/backend_skill/blob/cab0755015b42a994466a5d1e36c8f1e97b112d5/jpa.md)
