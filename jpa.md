@@ -56,6 +56,32 @@ logging:
     org.hibernate.SQL: debug
  ```
 
+```xml
+ spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb				# testdb 스키마에 mem인 메모리 데이터 베이스로 동작
+    username: sa
+    password:
+    sql-script-encoding: utf-8
+
+  h2:
+    console:
+      enabled: true							# h2 콘솔 사용
+      path: /h2									# localhost:port/h2 로 접근 가능
+      settings:
+        trace: false						# Print additional trace information 
+        web-allow-others: true	# 브라우저로 접근가능하게 하기
+      
+  jpa:
+    show-sql: true          # sql 쿼리 콘솔 출력
+    properties:
+      hibernate:
+        format_sql: true     # sql 보기좋게 출력 
+    generate-ddl: false       # @Entity 어노테이션 기준으로 DDL 작업 방지
+    hibernate:
+      ddl-auto: validate      # 변경된 스키마가 있는지 확인
+```
 
 ### @Entity
   - table과 일대일로 매칭되는 객체 단위
