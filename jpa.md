@@ -4,7 +4,7 @@
 
 * thymeleaf 공식 사이트: http://www.thymeleaf.org/
 * 스프링부트에서 thymeleaf 매핑
-  * ```resources/templates/``` +{ViewName} + ```.html```
+  * `resources/templates/` +{ViewName} + `.html`
   
   * MainController.java
   ```java
@@ -34,8 +34,8 @@
 
 ## JPA 환경설정
 
-```main/resources/application.yml```
- ```xml
+`main/resources/application.yml`
+```xml
  spring:
   datasource:
     url: jdbc:h2:tcp://localhost/~/jpashop;MVCC=TRUE
@@ -82,7 +82,7 @@ logging:
     hibernate:
       ddl-auto: validate      # 변경된 스키마가 있는지 확인
 ```
-
+* `spring.jpa.hibernate.ddl-auto`에 create,create-drop,update,validate 옵션들을 줄 수 있음. (`spring.jpa.generate-ddl=true`로 설정해주어야 사용 가능. 기본 default 값이 false임.)
 ### @Entity
   - table과 일대일로 매칭되는 객체 단위
   - 주의사항
