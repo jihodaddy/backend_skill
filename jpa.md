@@ -34,6 +34,27 @@
 
 ## JPA 환경설정
 
+```main/resources/application.yml```
+ ```xml
+ spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop;MVCC=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+ ```
 
 
 ### @Entity
