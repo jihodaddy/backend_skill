@@ -108,3 +108,9 @@ logging:
   - java의 enum 형태로 되어있는 코드 값이나 구분값을 데이타 타입으로 사용하고자 할때 사용
 ### @Transient
   - Entity 객체에 임시로 값을 담는 용도로 사용
+
+<hr>
+## pox.xml
+```java
+의존성
+```
