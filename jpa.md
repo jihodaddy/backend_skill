@@ -185,44 +185,44 @@ logging:
 
 ## 필드와 컬럼 매핑
 ### 데이터베이스 스키마 자동 생성
-DDL을 애플리케이션 실행 시점에 자동 생성
-테이블 중심에서 객체 중심으로
-데이터베이스 방언을 활용해서 데이터베이스에 맞는 적절한 DDL 생성
-이렇게 생성된 DDL은 개발 장비에서만 사용, 운영에서 쓰면 안된다.
-생성된 DDL은 운영서버에서는 사용하지 않거나, 적절히 다듬은 후 사용
+- DDL을 애플리케이션 실행 시점에 자동 생성
+- 테이블 중심에서 객체 중심으로
+- 데이터베이스 방언을 활용해서 데이터베이스에 맞는 적절한 DDL 생성
+- 이렇게 생성된 DDL은 개발 장비에서만 사용, 운영에서 쓰면 안된다.
+- 생성된 DDL은 운영서버에서는 사용하지 않거나, 적절히 다듬은 후 사용
 ### 자동 생성 속성
-create: 기존 테이블 삭제 후 다시 생성
-create-drop: create와 같으나 종료시점에 drop
-update: 변경 분만 반영 -> 운영에서는 바로 장애가 난다. 데이터가 몇 천만 건 있으면 웬만하면 lock 걸린다.
-validate: 엔티티와 테이블이 정상 매핑되었는지만 확인, 개발에서 쓰면 괜찮다.
-none: 사용하지 않음
-운영 장비에는 절대 validate를 제외하고 사용해선 안된다.
-개발 초기 단계에는 create 또는 update
-테스트 서버에는 update 또는 validate
-스테이징과 운영 서버에는 validate 또는 none
+- create: 기존 테이블 삭제 후 다시 생성
+- create-drop: create와 같으나 종료시점에 drop
+- update: 변경 분만 반영 -> 운영에서는 바로 장애가 난다. 데이터가 몇 천만 건 있으면 웬만하면 lock 걸린다.
+- validate: 엔티티와 테이블이 정상 매핑되었는지만 확인, 개발에서 쓰면 괜찮다.
+- none: 사용하지 않음
+- 운영 장비에는 절대 validate를 제외하고 사용해선 안된다.
+- 개발 초기 단계에는 create 또는 update
+- 테스트 서버에는 update 또는 validate
+- 스테이징과 운영 서버에는 validate 또는 none
 ### 어노테이션
-데이터베이스에 어떤 식으로 매핑이 될지를 결정, 자바 코드에 영향X
+- 데이터베이스에 어떤 식으로 매핑이 될지를 결정, 자바 코드에 영향X
 
-@Column: db 컬럼명과 필드명을 매핑
-@Temporal: 시간 관련, 요즘에는 그냥 LocalDate 같은 거 쓰면 된다.
-@Enumerated: Enum 관, 현업에서는 무조건 EnumType.STRING을 써야한다. 다른 타입은 index순으로 들어간다. default가 ORDIBAL이니 조심.   
+- @Column: db 컬럼명과 필드명을 매핑
+- @Temporal: 시간 관련, 요즘에는 그냥 LocalDate 같은 거 쓰면 된다.
+- @Enumerated: Enum 관, 현업에서는 무조건 EnumType.STRING을 써야한다. 다른 타입은 index순으로 들어간다. default가 ORDIBAL이니 조심.   
 ### @Column
-가장 많이 사용됨
-name: 필드와 매핑할 컬럼 이름
-insertable, updatable -> 읽기 전용
-nullable: null 허용여부 결정, DDL 생성시 사용
-unique: 유니크 제약 조건, DDL 생성 시 사용
-length: 길이 제한
+- 가장 많이 사용됨
+- name: 필드와 매핑할 컬럼 이름
+- insertable, updatable -> 읽기 전용
+- nullable: null 허용여부 결정, DDL 생성시 사용
+- unique: 유니크 제약 조건, DDL 생성 시 사용
+- length: 길이 제한
 ### @Lob
-db 필드의 내용이 너무 길면 바이너리 파일로 DB가 바로 밀어넣어야 할 때 사용
-CROB: Charactor 저장, String 타일에 @Lob하면 CROB이 된다.
-BROB: Byty 저장, byte 파일에 @Lob하면 BROB이 된다.
+- db 필드의 내용이 너무 길면 바이너리 파일로 DB가 바로 밀어넣어야 할 때 사용
+- CROB: Charactor 저장, String 타일에 @Lob하면 CROB이 된다.
+- BROB: Byty 저장, byte 파일에 @Lob하면 BROB이 된다.
 ### @Transient
-이 필드는 DB와 매핑하지 않는다는 뜻
-DB에는 매핑하고 싶지 않은데 객체에는 넣어두고 싶을 때 사용
+- 이 필드는 DB와 매핑하지 않는다는 뜻
+- DB에는 매핑하고 싶지 않은데 객체에는 넣어두고 싶을 때 사용
 ## 식별자 매핑
-@Id
-@GeneratedValue
+- @Id
+- @GeneratedValue
 ### GeneratedValue의 전략
 - IDENTITY: 데이터베이스에 위임,MYSQL에서 사용
 - SEQUENCE: 데이터베이스 시퀀스 오브젝트 사용, ORACLE에서 사용, @SequenceGenerator 필요
