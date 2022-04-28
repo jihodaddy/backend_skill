@@ -201,30 +201,20 @@ logging:
  ```
 ### postgresql
 ```xml
- spring:
-  datasource:
-    driverClassName: org.h2.Driver
-    url: jdbc:h2:mem:testdb				# testdb 스키마에 mem인 메모리 데이터 베이스로 동작
-    username: sa
-    password:
-    sql-script-encoding: utf-8
+server:
+    port: 8080
 
-  h2:
-    console:
-      enabled: true							# h2 콘솔 사용
-      path: /h2									# localhost:port/h2 로 접근 가능
-      settings:
-        trace: false						# Print additional trace information 
-        web-allow-others: true	# 브라우저로 접근가능하게 하기
-      
-  jpa:
-    show-sql: true          # sql 쿼리 콘솔 출력
-    properties:
-      hibernate:
-        format_sql: true     # sql 보기좋게 출력 
-    generate-ddl: false       # @Entity 어노테이션 기준으로 DDL 작업 방지
-    hibernate:
-      ddl-auto: validate      # 변경된 스키마가 있는지 확인
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/postgres
+        username: postgres
+        password: 1234
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: create
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
 ```
 * `spring.jpa.hibernate.ddl-auto`에 create,create-drop,update,validate 옵션들을 줄 수 있음. (`spring.jpa.generate-ddl=true`로 설정해주어야 사용 가능. 기본 default 값이 false임.)
 ### @Entity
