@@ -295,3 +295,19 @@ spring:
 - 기본키 제약 조건: NULL X, 유일, 변하면 안됨
 - 미래까지 기본키 제약 조건을 만족하는 자연키는 찾기 힘들다. 주민 번호도 변할 수 있다. 대체키(인조키)를 사용하자.
 - 권장: Long + 대체키 + 키 생성전략 사용 -> ORM에서는 이게 좋다.
+
+## Select Query
+- Repository 인터페이스는 Entity의 기본적인 CRUD 가능하도록 제공
+- Method
+	- findBy : 쿼리 요청
+	- countBy : 쿼리 결과 행 수를 요청
+	- orderBy : 쿼리 결과를 정렬
+	- existsBy : 해당 조건의 항목이 존재하는지 확인
+- Keyword
+	- And : 여러 컬럼을 and로 쿼리
+	- Or : 여러 컬럼을 or로 쿼리
+	- Containing : like 쿼리 (%param%)
+	- Between : 컬럼 두 값 사이에 있는 항목 쿼리
+	- OrderBy : 쿼리 결과를 정렬
+	- In : 여러 값 중에 하나인 항목 쿼리
+	- Exists : 해당 조건의 항목이 존재하는지 확인
