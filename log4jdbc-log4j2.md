@@ -43,10 +43,10 @@ log4jdbc.dump.sql.maxlinelength=0   ---2
         jdbc.resultsettable: OFF
         jdbc.connection: OFF
     ```
-- jdbc.sqlonly : SQL문만을 로그로 남긴다. 가독성을 위해, preparedStatement는 관련된 arguments 값으로 대체된다.
-- jdbc.sqltiming : SQL문과 해당 SQL을 실행하는데 걸린 시간을 포함한다.
+- `jdbc.sqlonly` : SQL문만을 로그로 남긴다. 가독성을 위해, preparedStatement는 관련된 arguments 값으로 대체된다.
+- `jdbc.sqltiming` : SQL문과 해당 SQL을 실행하는데 걸린 시간을 포함한다.
 (참고로 시간 정보는 millisecond로 나온다)
-- jdbc.audit : ResultSets를 제외한 모든 JBDC 호출 정보를 로그로 남긴다. 이는 매우 큰 볼륨을 가지는 결과물이므로, 특별히 JDBC 문제를 추적할 때 외엔 권하지 않는다.
-- jdbc.resultset : JDBC 결과를 포함합니다. ResultSet 오브젝트에 대한 모든 호출이 로깅되므로 매우 방대합니다.
-- jdbc.resultsettable : JDBC 결과를 테이블로 기록합니다. 
-- jdbc.connection : 수행 도중 열리고 닫히는 연결 내용을 포함합니다. 연결 누수 문제를 찾는데에 유용합니다.
+- `jdbc.audit` : ResultSets를 제외한 모든 JBDC 호출 정보를 로그로 남긴다. 이는 매우 큰 볼륨을 가지는 결과물이므로, 특별히 JDBC 문제를 추적할 때 외엔 권하지 않는다.
+- `jdbc.resultset` : JDBC 결과를 포함합니다. ResultSet 오브젝트에 대한 모든 호출이 로깅되므로 매우 방대합니다.
+- `jdbc.resultsettable` : JDBC 결과를 테이블로 기록합니다. 
+- `jdbc.connection` : 수행 도중 열리고 닫히는 연결 내용을 포함합니다. 연결 누수 문제를 찾는데에 유용합니다.
