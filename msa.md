@@ -25,5 +25,6 @@
   - 이벤트 메시지 발행
   - 이벤트 메시지 점검
 
-참고: [https://www.msaschool.io](https://www.msaschool.io/operation/implementation/implementation-three/)   
-[DEVOCEAN 블로그](https://devocean.sk.com/blog/techBoardDetail.do?ID=163640)
+참고:
+  - [https://www.msaschool.io](https://www.msaschool.io/operation/implementation/implementation-three/)   
+  - [DEVOCEAN 블로그](https://devocean.sk.com/blog/techBoardDetail.do?ID=163640)
