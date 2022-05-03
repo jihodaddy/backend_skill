@@ -335,3 +335,7 @@ spring:
 		- initialValue : DDL 생성 시에만 사용되고 DDL을 생성할 때 처음 시작하는 수를 지정하는 속성
 		- allocationSize : 시퀀스를 한번에 몇 개 호출하는 지 지정하는 속성, 성능 최적화를 할 때 사용한다. 기본값이 50이므로 데이터베이스에서 시퀀스 값이 몇 씩 증가하는 지 설정에 맞게 이 값을 지정해야 한다.
 		- catalog, schema : 데이터베이스 카탈로그와 스키마 이름 지정
+
+## JpaRepository 내장 save 함수
+- insert와 update로 나뉘는데 기준은 select 했을 떄 PK가 있으면 update, 없으면 insert
+- 
