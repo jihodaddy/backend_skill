@@ -17,8 +17,13 @@
 ### .properties파일
 
 #Database Configuration   
-db.jdbc-url=jdbc:`log4`jdbc:postgresql://localhost:5432/test   
+db.jdbc-url=jdbc:`log4jdbc`:postgresql://localhost:5432/test   
 db.driver-class-name=`net.sf.log4jdbc.sql.jdbcapi.DriverSpy`
 
-### log4j2.xml 파일 생성
-    - src/main/resources > log4j2.xml 파일생성.
+### log4jdbc.log4j2.properties 생성
+    - src/main/resources 폴더 위치에 파일생성.
+```
+log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
+log4jdbc.dump.sql.maxlinelength=0
+```
+    - maxlinelength는 sql문을 최대 몇 라인까지 출력할 것인지 결정.
