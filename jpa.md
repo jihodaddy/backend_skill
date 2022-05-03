@@ -314,6 +314,25 @@ spring:
 
 ## @GeneratedValue 
 - (사용방법 : @GeneratedValue(starategy = GenerationType.IDENTITY))
+- 하이버네이트(Hibernate)에서는 여러개의 데이터를 한번에 Insert, Update하게 해주는 기능인Batch기능을 지원
+```
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        generate_statistics: true
+        dialect: org.hibernate.dialect.H2Dialect
+        show_sql: true
+        format_sql: true
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 1000
+```
+- Spring Data JPA 의 saveAll 함수를 사용하면, 여러개의 데이터를 한번에 Insert 또는 Update 할 수 있다.
+- 하지만, @GeneratedValue 키 값 생성 전략을 Identity나 Auto로 정해놓는 경우 하이버네이트(Hibernate)에서 Batch Insert 기능을 비활성화 시켜놓고 Insert 작업을 수행
+- - 따라서, saveAll 과 같은 함수를 사용해도 데이터 개수만큼 INSERT 또는 UPDATE 쿼리가 나가게 됨.
 - IDENTITY 타입
 	- 기본키 생성을 데이터베이스에 위임 (MySQL, SQL Server, DB2에서 사용)
 	- 예를 들어 MySQL 사용시 auto_increment로 지정해 DDL 생성
@@ -335,7 +354,35 @@ spring:
 		- initialValue : DDL 생성 시에만 사용되고 DDL을 생성할 때 처음 시작하는 수를 지정하는 속성
 		- allocationSize : 시퀀스를 한번에 몇 개 호출하는 지 지정하는 속성, 성능 최적화를 할 때 사용한다. 기본값이 50이므로 데이터베이스에서 시퀀스 값이 몇 씩 증가하는 지 설정에 맞게 이 값을 지정해야 한다.
 		- catalog, schema : 데이터베이스 카탈로그와 스키마 이름 지정
+- TABLE 타입
+	- 키 생성 전용 테이블을 하나 만들고 여기에 이름과 값으로 사용할 컬럼을 만들어 데이터베이스 시퀀스를 흉내내는 전략
+	- 장점: 모든 데이터베이스에 적용 가능
+	- 단점: 성능이 떨어짐
+	- @TableGenerator 사용 필수
 
 ## JpaRepository 내장 save 함수
 - insert와 update로 나뉘는데 기준은 select 했을 떄 PK가 있으면 update, 없으면 insert
-- 
+```java
+	@Transactional
+	@Override
+	public <S extends T> S save(S entity) {
+
+		Assert.notNull(entity, "Entity must not be null.");
+
+		if (entityInformation.isNew(entity)) {
+			em.persist(entity);
+			return entity;
+		} else {
+			return em.merge(entity);
+		}
+	}
+```
+- 새로운 엔티티 인지 확인해 persist하거나 merge함
+### 새로운 Entity 구별
+- isNew() 함수는 Entity의ID가 null인지 아닌지 구별해서
+- null 이라면 새로운 Entity로 간주
+- null이 아니라면 이미 존재하는 Entity로 간주
+- @Id@GeneratedValue 어노테이션 사용한 ID인 경우 persist()호출한 이후 ID생성
+
+
+## Entity에 복합키로만 이루어져있을떄(일대다대일로 이루어 진것) 사용법 확인해보기
