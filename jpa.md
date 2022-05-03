@@ -311,3 +311,27 @@ spring:
 	- OrderBy : 쿼리 결과를 정렬
 	- In : 여러 값 중에 하나인 항목 쿼리
 	- Exists : 해당 조건의 항목이 존재하는지 확인
+
+## @GeneratedValue 
+- (사용방법 : @GeneratedValue(starategy = GenerationType.IDENTITY))
+- IDENTITY 타입
+	- 기본키 생성을 데이터베이스에 위임 (MySQL, SQL Server, DB2에서 사용)
+	- 예를 들어 MySQL 사용시 auto_increment로 지정해 DDL 생성
+	- 1차 캐시에 @ID 와 @Entity로 지정한 것들이 들어감
+	- GeneratedValue가 IDENTITY 타입이면 id생성을 데이터베이스에 위임
+	- JPA는 1차 캐시에 넣을 때 id필드가 뭔지 알 수 없음
+	- JPA : persist
+- AUTO 타입
+	- 방언에 따라 자동 지정
+	- 각 데이터베이스가 제공하는 SQL문법에 따라 자동 생성
+	- 
+- SEQUENCE 타입
+	- 시퀀스오브젝트를 만들고 이걸 통해 id값을 가져온다(오라클만 가능)
+	- @SequenceGenerator 필요
+	- @SequenceGenerator 속성
+
+		- name : 식별자 생성기의 이름, 필수 속성이다.
+		- sequenceName : 데이터베이스에 등록되어 있는 시퀀스 이름
+		- initialValue : DDL 생성 시에만 사용되고 DDL을 생성할 때 처음 시작하는 수를 지정하는 속성
+		- allocationSize : 시퀀스를 한번에 몇 개 호출하는 지 지정하는 속성, 성능 최적화를 할 때 사용한다. 기본값이 50이므로 데이터베이스에서 시퀀스 값이 몇 씩 증가하는 지 설정에 맞게 이 값을 지정해야 한다.
+		- catalog, schema : 데이터베이스 카탈로그와 스키마 이름 지정
