@@ -384,5 +384,7 @@ spring:
 - null이 아니라면 이미 존재하는 Entity로 간주
 - @Id@GeneratedValue 어노테이션 사용한 ID인 경우 persist()호출한 이후 ID생성
 
+-  `식별자(@Id)`가 null또는 0인 경우 new 상태로 인식(Long타입:null인 경우 newState, int와같은 Primitive경우 new)
+
 
 ## Entity에 복합키로만 이루어져있을떄(일대다대일로 이루어 진것) 사용법 확인해보기
