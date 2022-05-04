@@ -343,7 +343,13 @@ spring:
 - AUTO 타입
 	- 방언에 따라 자동 지정
 	- 각 데이터베이스가 제공하는 SQL문법에 따라 자동 생성
-	- 
+	- `save` 진행시 insert 쿼리 전에 hibernate_sequence 테이블의 nextval을 확인하고 insert됨.
+	- @id값이 있으면 id에 해당하는 select 실행 후, update됨.
+	```
+		Hibernate: select next_val as id_val from hibernate_sequence for update
+		Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+		Hibernate: insert into ex_entity (name, id) values (?, ?)
+	```
 - SEQUENCE 타입
 	- 시퀀스오브젝트를 만들고 이걸 통해 id값을 가져온다(오라클만 가능)
 	- @SequenceGenerator 필요
