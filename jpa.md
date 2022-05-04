@@ -423,4 +423,4 @@ spring:
 
 ## Entity에 복합키로만 이루어져있을떄(일대다대일로 이루어 진것) 사용법 확인해보기
 
-[영속성 관련](https://ultrakain.gitbooks.io/jpa/content/chapter3/chapter3.4.html)
+[영속성 관련](https://ultrakain.gitbooks.io/jpa/content/chapter3/chapter3.4.html){:target="_blank"}
