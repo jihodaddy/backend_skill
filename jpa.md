@@ -368,6 +368,11 @@ spring:
 
 ## JpaRepository 내장 save 함수
 - insert와 update로 나뉘는데 기준은 select 했을 떄 PK가 있으면 update, 없으면 insert
+- id를 직접 입력하는 경우
+	- commit(트랜잭션 커밋) 이후 쿼리실행.
+- id 생성을 DB에 위임하는 경우( IDENTITY 식별자 생성 전략)
+	- persist(영속화) 할때 쿼리 실행
+
 ```java
 	@Transactional
 	@Override
