@@ -32,6 +32,5 @@ spring:
 ```
 
 ## 코드
-  - Consumer (Service)
-    - 
+  - Consumer (Service) 
   - Producer( Controller, Service)
