@@ -3,6 +3,12 @@
 ## Kafka 설치
   - Docker 설치
   - Windows 설치
+    - https://kafka.apache.org/downloads 에서 Binary download
+    - zookeeper.properties 파일 dataDir 경로에 {카프카 설치경로}/zookeeper-data 추가
+    - server.properties 파일 log.dirs 경로에 {카프카 설치경로}/kafka-logs 추가
+    - zookeeper 실행
+    - cmd
+      `.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties`
 
 ## Dependency
 ```xml
@@ -30,6 +36,10 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 ```
+## Kafka 실행
+  - Broker 는 kafka의 서버를 뜻함, 동일 노드 내에서 여러개의 Broker를 띄울 수 있다.
+  - 여러개의 Broker가 띄워져 있으면 이 분산 Message Queue를 관리 해주는 역활을 하는 것이 Zookeeper이다. 
+  - kafka 서버를 띄우기 전에 Zookeeper 반드시 띄워야 한다.
 
 ## 코드
   - Consumer (Service) 
