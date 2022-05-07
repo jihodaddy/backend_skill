@@ -36,6 +36,28 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 ```
+- `spring.kafka.consumer`
+  - `bootstrap-servers`
+    - Kafka 연결에 사용될 호스트:포트쌍
+    - 글로벌 설정도 있지만 consumer 전용으로 오바리이딩
+- `group-id`
+  - Consumer는 유일하게 식별 가능한 그룹 id를 작성
+- `auto-offset-reset`
+  - Kafka 초기 offset이 없거나, 더이상 offset이 없을때 수행
+    - `latest` : 가장 최근에 생산된 메시지 offset reset
+    - `earliest` : 가장 오래된 메시지로 offset reset
+    - `none` : offset 정보없을때, Exception 발생
+- `key-deserializer` / `value-deserializer`
+  - Kafka에서 데이터를 수신할 때, key / value 역직렬화
+  - KafkaTemplate과 매핑
+  - (Json 데이터일 경우, `JsonDeserializer`)
+- `spring.kafka.producer`
+  - `bootstrap-servers`
+    - consumer와 동일
+  - `key-serializer` / `value-serializer`
+    - Kafka에서 데이터를 송신할 때, key / value 직렬화
+
+
 ## Kafka 실행
   - Broker 는 kafka의 서버를 뜻함, 동일 노드 내에서 여러개의 Broker를 띄울 수 있다.
   - 여러개의 Broker가 띄워져 있으면 이 분산 Message Queue를 관리 해주는 역활을 하는 것이 Zookeeper이다. 
