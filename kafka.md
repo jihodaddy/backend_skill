@@ -10,6 +10,14 @@
     - cmd
       `.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties`
 
+## Kafka 연동 순서
+  - `Producer` & `Consumer` class 작성
+  - `yml` 또는 `properties` 설정
+  - `Controller` 작성
+  - 테스트 수행( command로 `Zookeeper` 와 `Kafka` 실행
+  - Spring boot 서버 구동해 구독하고 있는 정보 확인
+  - http 요청으로 Kafka서버의 Topic 메세지 전달 및 Listener 출력 
+  
 ## Dependency
 ```xml
   <dependency>
