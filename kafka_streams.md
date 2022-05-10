@@ -15,7 +15,7 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: 3.39.31.109:9093
+          brokers: IP주소
         streams:
           binder:
             configuration:
@@ -26,11 +26,11 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: cbf
-          destination: eric
+          group: 그룹이름
+          destination: 이름
           contentType: application/json
         event-out:
-          destination: eric
+          destination: 이름
           contentType: application/json
 logging:
   level:
