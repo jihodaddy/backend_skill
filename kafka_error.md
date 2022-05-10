@@ -6,6 +6,8 @@
 - `listeners=PLAINTEXT://:9092` 주석 해제
 
 ```
+  ...
+
   # The id of the broker. This must be set to a unique integer for each broker.
   broker.id=0
 
@@ -17,5 +19,7 @@
   #     listeners = listener_name://host_name:port
   #   EXAMPLE:
   #     listeners = PLAINTEXT://your.host.name:9092
-  `listeners=PLAINTEXT://:9092`
+  listeners=PLAINTEXT://:9092
+  
+  ...
 ```
