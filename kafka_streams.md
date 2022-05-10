@@ -1,4 +1,5 @@
-# 
+# Kafka Streams (카프카 스트림) 
+
 ```
   server:
   port: 8080
