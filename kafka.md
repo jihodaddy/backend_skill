@@ -143,7 +143,7 @@ spring:
   - 여러개의 Broker가 띄워져 있으면 이 분산 Message Queue를 관리 해주는 역활을 하는 것이 Zookeeper이다. 
   - kafka 서버를 띄우기 전에 Zookeeper 반드시 띄워야 한다.
 
-## 코드
+## 간단한 Kafka 
   - Consumer (Service) 
   ```java
     import org.springframework.kafka.annotation.KafkaListener;
@@ -199,4 +199,53 @@ spring:
       kafkaSampleProducerService.sendMessage(message);
     }
   }
+  ```
+  
+  ## Kafka 예제
+  
+  ### Producer api
+  ```java
+    String topicName = "test"; 
+    String key = "Key1"; 
+    String value = "Value-1"; 
+
+    // 카프카와 연결하는 서버 설정
+    Properties props = new Properties(); 
+    props.put("bootstrap.servers", "localhost:9092,localhost:9093");
+    props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer"); 
+    props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer"); 
+
+    //카프카에 데이터 전송
+    Producer<String, String> producer = new KafkaProducer <>(props); 
+    ProducerRecord<String, String> record = new ProducerRecord<>(topicName, key ,value); 
+    producer.send(record); 
+    producer.close(); 
+  ```
+  ### Consumer api
+  ```java
+    String topicName = "test"; 
+    String groupName = "new_test_topic_group"; 
+
+    Properties props = new Properties(); 
+    props.put("bootstrap.servers", "localhost:9092,localhost:9093");
+    props.put("group.id", groupName); 
+    props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer"); 
+    props.put("value.deserializer", "org.apache.kafka.common.serialization.StringSerializer"); 
+    props.put("enable.auto.commit", "false"); 
+
+    try (Kafka Consumer<String, String> consumer) { 
+      consumer = new KafkaConsumer<>(props); 
+      consumer.subscribe(Arrays.asList(topicName)); 
+      while (true){ 
+      ConsumerRecords<String, String  records = consumer.poll(100); 
+      for (ConsumerRecord<String, String> record : records)
+        System.out.println(String.valueOf(record.key()) + record.value()); 
+      consumer.commitAsync(); 
+      } 
+    } catch(Exception e){ 
+      e.printStackTrace(); 
+    } finally{ 
+      consumer.commitSync(); 
+      consumer.close(); 
+} 
   ```
