@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PostRepository extends 
-        PagingAndSortingRepository<Post, Long>, JpaSpecificationExecutor<Member>{ }
+        PagingAndSortingRepository<Post, Long>, JpaSpecificationExecutor<Post>{ }
 ```
 - Specification (title로 Post검색)
 ```java
