@@ -1,4 +1,8 @@
-# Kafka 오류 해결
+## JPA 오류
+  ### Invocation of init method failed
+    - Spring framework 사용시 xml 설정을 잘못하는 경우 나오는 애러
+
+## Kafka 오류 해결
 
 ### could not be established. Broker may not be available. 오류
 
