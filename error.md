@@ -1,6 +1,12 @@
 ## JPA 오류
   ### Invocation of init method failed
     - Spring framework 사용시 xml 설정을 잘못하는 경우 나오는 애러
+  ### 오류: "post" 칼럼은 "post" 릴레이션(relation)에 없음
+    - postgresql은 일반적인 Table, column 대신 Relation(table), attribute(column)을 사용함.
+    - `search_path` : postgresql을 새 데이터베이스 생성시 public 스키마가 자동 생성, 즉 DB접근 시, Default로 public스키마로 접근
+    - search_path는 탐색할 스키마의 순서를 지정해주는 변수
+    - 퀴리 `show search_path;` 실행시 `schemaA, schemaB, schemaC` 이라하면
+      - schemaA 부터 검색함
 
 ## Kafka 오류 해결
 
