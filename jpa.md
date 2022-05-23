@@ -215,8 +215,27 @@ spring:
         hibernate:
             ddl-auto: create
         database-platform: org.hibernate.dialect.PostgreSQLDialect
+	// 카멜케이스를 스네이크케이스(언더바) 형식으로 DB에 저장
+	naming:
+	    physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl	
+
 ```
-* `spring.jpa.hibernate.ddl-auto`에 create,create-drop,update,validate 옵션들을 줄 수 있음. (`spring.jpa.generate-ddl=true`로 설정해주어야 사용 가능. 기본 default 값이 false임.)
+- spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+	- 카멜케이스를 스네이크 케이스로 변환해 DB에 저장
+- Hibernate Sequence Generator 결정 관련 설정
+  - spring boot는 Hibernate의 id 생성 전략을 결정하는 설정이 존재한다.
+  - application.yml 파일에 use-new-id-generator-mappings 값을 확인한다.
+  - spring boot 버전에 따라 default  값이 다르기 때문에 전략이 다르게 선택된다.
+  - `spring boot 1.5 버전`
+    . use-new-id-generator-mappings의 default 값이 false 이다.
+    . 기본키 생성 전략이 AUTO인 경우 IDENTITY를 따라간다.
+  - `spring boot 2.0 버전 이상`
+    . use-new-id-generator-mappings의 default 값이 true 이다.
+    . 기본키 생성 전략이 AUTO인 경우 TABLE 전략을 따라간다.
+* `spring.jpa.hibernate.ddl-auto`에 create,create-drop,update,validate 옵션들을 줄 수 있음. 
+ 	(`spring.jpa.generate-ddl=true`로 설정해주어야 사용 가능. 기본 default 값이 false임.)
+
+
 ### @Entity
   - table과 일대일로 매칭되는 객체 단위
   - 주의사항
