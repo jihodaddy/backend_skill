@@ -421,6 +421,20 @@ spring:
 4. 쓰기 지연 저장소의 SQL을 DB로 보냄
 5. 데이터베이트 트랜잭션을 커밋
 
+### 릴레이션(관계, relationship)
+- 1:1 (one to one) : ex. 남자 - <결혼> - 여자
+- 1:N (ont to many) : ex. 부모 - <가족> - 자식
+- N:M (many to many) : ex. 학원- <수강> -학생
+
+- JPA 엔티티와의 관계
+	- 관계를 소유하는 테이블
+	- 관계를 소유 당하는(소유되는) 테이블(FK가 들어감)
+		- (사원 - 부서) : 1:N
+		- (사원 - 취미(FK)) : 예) 1:1, 1:N
+		- (사원 - 권한(인가)) : N:M
+			- (사원 - 사원_권한(FK) - 권한) : FK 테이블을 따로 둬서 관리
+
+
 ## Entity에 복합키로만 이루어져있을떄(일대다대일로 이루어 진것) 사용법 확인해보기
 
 [영속성 관련](https://ultrakain.gitbooks.io/jpa/content/chapter3/chapter3.4.html)
