@@ -7,7 +7,8 @@
     - search_path는 탐색할 스키마의 순서를 지정해주는 변수
     - 퀴리 `show search_path;` 실행시 `schemaA, schemaB, schemaC` 이라하면
       - schemaA 부터 검색함
-
+  ### GenerationTarget encountered exception accepting command : Error executing DDL "
+    - 
 ## Kafka 오류 해결
 
 ### could not be established. Broker may not be available. 오류
