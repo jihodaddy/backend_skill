@@ -1,4 +1,9 @@
 ## JPA 오류
+  ### Failed to configure a DataSource 
+  - Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+  - 데이터베이스에 연결할 때 필요한 정보가 없어서 나는 오류
+
+Reason: Failed to determine a suitable driver class
   ### Invocation of init method failed
     - Spring framework 사용시 xml 설정을 잘못하는 경우 나오는 애러
   ### 오류: "post" 칼럼은 "post" 릴레이션(relation)에 없음
