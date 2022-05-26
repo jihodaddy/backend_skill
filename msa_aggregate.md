@@ -10,5 +10,5 @@
     - 하나 이상의 품목(LineItem)을 가지며
     - 하나 이상의 주문결제(OrderPayment)를 가짐
       - OrderPayment는 추상 클래스로 모바일결제(MobilePayment)와 (신용카드)CreditPayment상속
-  - 
+  
 ![orderdomain](https://user-images.githubusercontent.com/94466572/170524254-3e2847db-3a9f-469d-aa9a-edbac799dec6.png)
