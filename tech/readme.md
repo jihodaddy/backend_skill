@@ -1,9 +1,9 @@
 # 일반 기술 질문
 
-- [REST](tech/Rest.md)
+- [REST](https://github.com/jihodaddy/backend_skill/blob/1c4054282bbdecd85a8ed37f887955c1202c8d13/tech/Rest.md)
 - 동등성과 동일성의 차이를 아는지?
 - 세션이 뭔가요? 서버 여러 대일 때 세션을 어떻게 처리하죠?
-- [서블릿이 뭔가요?](tech/servlet.md)
+- [서블릿이 뭔가요?](https://github.com/jihodaddy/backend_skill/blob/1c4054282bbdecd85a8ed37f887955c1202c8d13/tech/servlet.md)
 - 데이터베이스 인덱스 동작 과정
 - 캐시가 무엇인가요? redis 같은 걸 캐싱 서버로 사용해보신적 있으신가요?
 - Call by value와 Call by reference 차이
@@ -68,7 +68,7 @@
 - Connection Pool을 쓰는 이유는? 단순히 커넥션을 새로 만드는 것과 차이는?
 - 그러면 Connection을 만드는 시간을 제외하고는 다른 장점은 없나요?
 - Connection Pool의 최대치가 1000개, WAS가 5개라고 해보자. 각 WAS는 200개씩의 Connection을 가지는지? 그렇다면 6번째 WAS가 추가된다면 6번째에는 아무런 Connection도 할당되지 않는지?
-- [SOLID중 한가지 설명해주세요.](tech/Solid_principle.md)
+- [SOLID중 한가지 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/1c4054282bbdecd85a8ed37f887955c1202c8d13/tech/Solid_principle.md)
 - 재귀의 장점, 단점?
 - Sync vs. Async 차이
 - MyISAM과 InnoDB의 차이점
