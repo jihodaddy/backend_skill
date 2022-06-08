@@ -142,7 +142,7 @@
 - ManyToOne 쓴 이유는? 반대쪽에서 OneToMany 쓸수도 있지 않나요?
 - JPA를 왜 쓰나요?(ORM이 나오게 된 이유) 어떤 장점이 있죠?
 - 쓰면서 불편한 점 없었는지?
-- Hibernate는 뭘까요?
+- [Hibernate는 뭘까요?](https://github.com/jihodaddy/backend_skill/blob/d862b71170af8d3f8d416bc314fe44819d417a4f/tech/Hibernate.md)
 - Open Session In View
 - JPA 사용할때랑 직접 SQL 사용할때랑 어떤 차이?
 - @transactional 동작 과정
