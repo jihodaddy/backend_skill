@@ -147,7 +147,7 @@
 - JPA 사용할때랑 직접 SQL 사용할때랑 어떤 차이?
 - @transactional 동작 과정
 - readOnly 붙인 이유
-- JPA FetchType
+- [JPA FetchType](https://github.com/jihodaddy/backend_skill/blob/5fabb1447c452d2142cb4c46fa8af94f95b1764d/tech/Jpa_fetch.md)
 - LAZY와 EAGER 각각 어떤 기준으로 사용하시는지?
 - N+1 문제
 - 엔티티 매핑을 할 때 ManyToOne을 lazy로 설정해주지 않았던 이유
