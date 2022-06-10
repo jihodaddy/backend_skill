@@ -28,8 +28,9 @@
 
 spring-boot-starter-web 의존성을 설정하면 관련 라이브러리들이 자동으로 다운됨 - spring-beans - spring-context - spring-core - spring-webmvc 등등
 
-    ### 빈설정방법1 - 기본방법
-      - resource/application.xml
+### 빈설정방법1 - 기본방법
+
+- resource/application.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -67,111 +68,123 @@ public class SpringApplication {
 }
 ```
 
-    ### 빈설정방법2 - spring 2.5 버전
-    역시 xml 파일을 설정해준다. component-scan 기능이 추가되었다.
-    - resources/application.xml
+### 빈설정방법2 - spring 2.5 버전
 
-    ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <beans xmlns="http://www.springframework.org/schema/beans"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xmlns:context="http://www.springframework.org/schema/context"
-          xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+역시 xml 파일을 설정해준다. component-scan 기능이 추가되었다.
 
-        <context:component-scan base-package="me.wordbe.springgoahead" />
+- resources/application.xml
+
+  ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+      <context:component-scan base-package="me.wordbe.springgoahead" />
 
 
-    </beans>
-    ```
-    패키지의 각각 클래스에 애노테이션을 붙여서 빈을 등록한다.
+  </beans>
+  ```
 
-    ```java
-    import org.springframework.stereotype.Repository;
+  패키지의 각각 클래스에 애노테이션을 붙여서 빈을 등록한다.
 
-    @Repository
-    public class BookRepository {
-    }
-    ```
-    ```java
-    import org.springframework.beans.factory.annotation.Autowired;
-    import org.springframework.stereotype.Service;
+  ```java
+  import org.springframework.stereotype.Repository;
 
-    @Service
-    public class BookService {
+  @Repository
+  public class BookRepository {
+  }
+  ```
 
-        @Autowired
-        BookRepository bookRepository;
+  ```java
+  import org.springframework.beans.factory.annotation.Autowired;
+  import org.springframework.stereotype.Service;
 
-        public void setBookRepository(BookRepository bookRepository) {
-            this.bookRepository = bookRepository;
-        }
-    }
-    ```
-    빈을 등록하려면 @Component 애노테이션을 클래스 위에 붙여주면 된다.
+  @Service
+  public class BookService {
 
-    `@Repository`, `@Service` 어노테이션을 추적하면 결국 `@Component` 애노테이션을 따라간다. 명시적으로 저장소와 서비스를 나타내 주기에 용이하다.
-    여기에 의존성을 주입할 때 (DI) `@Autowired` 애노테이션을 활용한다.
-    이렇게 되면 xml 설정파일에 빈을 등록하는 것보다는 조금 더 손쉽게 애노테이션으로 빈을 등록할 수 있고, 자바 파일에서 바로 확인 가능하다.
+      @Autowired
+      BookRepository bookRepository;
 
-    ### 빈설정방법3 - Java Config
-    위 두 클래스와 같은 패키지에 설정파일(java)을 만든다. xml 보다 뭔가 더 친근하다.
-    - ApplicationConfig.java
+      public void setBookRepository(BookRepository bookRepository) {
+          this.bookRepository = bookRepository;
+      }
+  }
+  ```
 
-    ```java
-    import org.springframework.context.annotation.Bean;
-    import org.springframework.context.annotation.Configuration;
+  빈을 등록하려면 @Component 애노테이션을 클래스 위에 붙여주면 된다.
 
-    @Configuration
-    public class ApplicationConfig {
+  `@Repository`, `@Service` 어노테이션을 추적하면 결국 `@Component` 애노테이션을 따라간다. 명시적으로 저장소와 서비스를 나타내 주기에 용이하다.
+  여기에 의존성을 주입할 때 (DI) `@Autowired` 애노테이션을 활용한다.
+  이렇게 되면 xml 설정파일에 빈을 등록하는 것보다는 조금 더 손쉽게 애노테이션으로 빈을 등록할 수 있고, 자바 파일에서 바로 확인 가능하다.
 
-        @Bean
-        public BookRepository bookRepository() {
-            return new BookRepository();
-        }
+### 빈설정방법3 - Java Config
 
-        @Bean
-        public BookService bookService(BookRepository bookRepository) {
-            BookService bookService = new BookService();
+위 두 클래스와 같은 패키지에 설정파일(java)을 만든다. xml 보다 뭔가 더 친근하다.
 
-            // 의존성 주입 setter 이용
-            bookService.setBookRepository(bookRepository);
-            return bookService;
-        }
-    }
-    ```
-    설정 파일에서 빈 두개를 등록하고, 의존성 주입까지 했다.
-    이렇게 된 이상 나머지 두 클래스에서 애노테이션을 빼어도 빈 등록과 DI(의존성 주입)이 성공적으로 된 것이다.
-    메인 메소드를 수정
+- ApplicationConfig.java
 
-    ```java
-    public class DemoApplication {
+  ```java
+  import org.springframework.context.annotation.Bean;
+  import org.springframework.context.annotation.Configuration;
 
-        public static void main(String[] args) {
-            ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
-                    // ...
-        }
-    }
-    ```
-    ApplicationContext (IoC 컨테이너)에 `AnnotationConfigApplicationContext` 를 통해 우리가 설정해 주었던 자바 설정 클래스를 등록해주어 빈팩토리를 받아온다.
-    ( xml 설정에서는 `ClassPathXmlApplicationContext` 를 이용했었다. )
+  @Configuration
+  public class ApplicationConfig {
 
-    ### 빈설정방법4 - Java Config, ComponentScan
-    방법 3의 경우 기존 xml 에 bean 을 일일이 등록하던 것 처럼, java config 파일에도 똑같은 행위를 해야 했다. component scan으로 이 문제를 해결해보자.
-    - ApplicationConfig.java
+      @Bean
+      public BookRepository bookRepository() {
+          return new BookRepository();
+      }
 
-    ```java
-    import org.springframework.context.annotation.ComponentScan;
-    import org.springframework.context.annotation.Configuration;
+      @Bean
+      public BookService bookService(BookRepository bookRepository) {
+          BookService bookService = new BookService();
 
-    @Configuration
-    @ComponentScan(basePackageClasses = SpringApplication.class) // 최상단 메인 클래스
-    public class ApplicationConfig {
-    }
-    ```
-    컴포넌트스캔 애노테이션에 메인 클래스를 등록해줌으로써, 그 아래에 연관된 클래스에 등록된 모든 빈들을 알아서 스캔해주고 등록해주도록 한다.
-    물론, 각각 클래스 위에는 @Component 와 같은 애노테이션이 붙어야 하고, 의존성 주입을 위해 @Autowired 가 붙어야 한다.
+          // 의존성 주입 setter 이용
+          bookService.setBookRepository(bookRepository);
+          return bookService;
+      }
+  }
+  ```
 
-    ### 빈설정방법5 - spring boot
+  설정 파일에서 빈 두개를 등록하고, 의존성 주입까지 했다.
+  이렇게 된 이상 나머지 두 클래스에서 애노테이션을 빼어도 빈 등록과 DI(의존성 주입)이 성공적으로 된 것이다.
+  메인 메소드를 수정
+
+  ```java
+  public class DemoApplication {
+
+      public static void main(String[] args) {
+          ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+                  // ...
+      }
+  }
+  ```
+
+  ApplicationContext (IoC 컨테이너)에 `AnnotationConfigApplicationContext` 를 통해 우리가 설정해 주었던 자바 설정 클래스를 등록해주어 빈팩토리를 받아온다.
+  ( xml 설정에서는 `ClassPathXmlApplicationContext` 를 이용했었다. )
+
+### 빈설정방법4 - Java Config, ComponentScan
+
+방법 3의 경우 기존 xml 에 bean 을 일일이 등록하던 것 처럼, java config 파일에도 똑같은 행위를 해야 했다. component scan으로 이 문제를 해결해보자.
+
+- ApplicationConfig.java
+
+  ```java
+  import org.springframework.context.annotation.ComponentScan;
+  import org.springframework.context.annotation.Configuration;
+
+  @Configuration
+  @ComponentScan(basePackageClasses = SpringApplication.class) // 최상단 메인 클래스
+  public class ApplicationConfig {
+  }
+  ```
+
+  컴포넌트스캔 애노테이션에 메인 클래스를 등록해줌으로써, 그 아래에 연관된 클래스에 등록된 모든 빈들을 알아서 스캔해주고 등록해주도록 한다.
+  물론, 각각 클래스 위에는 @Component 와 같은 애노테이션이 붙어야 하고, 의존성 주입을 위해 @Autowired 가 붙어야 한다.
+
+### 빈설정방법5 - spring boot
 
     ```java
     @SpringBootApplication
