@@ -126,7 +126,7 @@
 - Spring에서 서비스와 컴포넌트의 차이
 - 다른 프레임워크들도 많이 있는데, 특별히 Spring boot를 사용한 이유가 있는지?
 - IoC Container 직접 만든다면 어떻게 구현하실 생각인가요?
-- 스프링에서 빈 등록 방법
+- [스프링에서 빈 등록 방법](https://github.com/jihodaddy/backend_skill/blob/dafe74a1ccf435234d91736ecfdeda157554c7d6/tech/Spring_bean.md)
 - Spring MVC 설명
 - Spring MVC 에서 요청이 들어왔을 때부터 응답이 나갈 때까지의 흐름을 설명해주세요.
 - ControllerAdvice가 무엇인가요?
