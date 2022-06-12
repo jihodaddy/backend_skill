@@ -176,7 +176,7 @@
 - equals and hashcode 재구현한 이유?
 - JVM과 GC에 대해 설명해주세요.
 - GC가 언제 동작하는지 설명해주세요.
-- JUnit의 생명주기에 대해 아는지?
+- [JUnit의 생명주기에 대해 아는지?](https://github.com/jihodaddy/backend_skill/blob/c4852900ca414a0546ecd0cf00e481e64c465461/tech/Junit.md)
 - Java의 세 가지 변수에 대해 JVM 메모리와 연관지어 설명해주세요.
 - Generic을 쓰는 이유는?
 - Java에서 동일한 String을 새로 만들 때마다 객체가 생성되는지?
