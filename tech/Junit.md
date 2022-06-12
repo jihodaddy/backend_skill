@@ -1,4 +1,4 @@
-# JUnit 생명주기에
+# JUnit 생명주기
 
 ### @BeforeAll
 
