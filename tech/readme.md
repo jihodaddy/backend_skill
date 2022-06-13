@@ -95,7 +95,7 @@
 - 쿠키에 대해서 설명해주세요.
 - 로컬 스토리지에 대해 설명해주세요.
 - 프론트와 API 서버간에 어떻게 통신을 하는지, 구현을 어떻게 했는지 설명해주세요
-- HTTP Method에 대해서 각각 설명해주세요.
+- [HTTP Method에 대해서 각각 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/e3c66a4d390bca80748044dac6aeee7de57f87fe/tech/Http_method.md)
 - PUT은 update만 되나요?
 - CLOSE_WAIT, TIME_WAIT에 대해 설명해주세요.
 - 이벤트 같은 것을 할 때(순간적으로 트래픽이 높아질 수 있는 순간) 아키텍처적으로 어떻게 설계할 것인지?
