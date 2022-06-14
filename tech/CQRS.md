@@ -19,3 +19,11 @@
 - 주문의 목록을 조회하는 기능
   - 사용자 정보를 함께 보여줘야 하므로 User 를 Join 해서 eager로 로딩
     단일 모델을 유지하려고 노력하다 보면 다른 부분에서 복잡한 일이 생기게 됨
+    
+![cqrs](https://user-images.githubusercontent.com/94466572/173595334-aac63682-93ae-4ba4-b885-02f4e79a20b3.png)
+
+![명령조회단일모델2](https://user-images.githubusercontent.com/94466572/173595359-2024c9e1-e9c1-41b3-aa91-0d66506d7167.png)
+
+![명령과쿼리3](https://user-images.githubusercontent.com/94466572/173595372-98cf95b8-855c-4f74-8644-1e1e84ecc3b6.png)
+
+![명령조회분리4](https://user-images.githubusercontent.com/94466572/173595378-e16585fe-2212-4a1b-abd9-dcf57d2d5ddd.png)
