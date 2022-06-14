@@ -63,7 +63,7 @@
 - Layered Architecture에서 Presentation, Application, Domain, InfraStructure layer의 역할에 대해 설명해 주세요.
 - DDD에 대해 알거나 공부해봤는지?
 - DDD에서 Domain이 무엇인지?
-- CQRS, 이벤트 소싱에 대해 아는지?
+- [CQRS, 이벤트 소싱에 대해 아는지?](https://github.com/jihodaddy/backend_skill/blob/6c0758b3568d13a7e1a17213ab351aee370cbe1d/tech/CQRS.md)
 - 최근 했던 프로젝트의 패키지 구조에 대해 설명해주세요. (선호하는 패키지 구조)
 - Connection Pool을 쓰는 이유는? 단순히 커넥션을 새로 만드는 것과 차이는?
 - 그러면 Connection을 만드는 시간을 제외하고는 다른 장점은 없나요?
