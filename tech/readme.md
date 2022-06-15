@@ -81,7 +81,7 @@
 - 백엔드 단에서 성능을 올릴 수 있는 방법은?
 - 데이터베이스에서 왜 여러 테이블을 두는지?
 - 최근에 했던 프로젝트 구조를 화이트보드 이용해서 설명해주세요.
-- Inner Join과 Outer Join에 대해 설명해주세요.
+- [Inner Join과 Outer Join에 대해 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/34fd47ac4877e8de0ca030d22c64fcb663403707/tech/Inner_outer_join.md)
 - 보통 면접에선 이런거 물어보던데~ 했는데 혹시 저희가 물어보지 않아서 아쉬웠던 질문이 있나요? 있으시면 질문과 함께 답변 해주세요.
 - 마지막으로, 준비 많이 해왔는데~ 또는 이건 꼭 답하고 가고 싶다 하는 내용 있으신가요?
 - Github의 장점은?
