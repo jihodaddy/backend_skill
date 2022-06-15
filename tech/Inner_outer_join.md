@@ -63,6 +63,8 @@ null |  6
 ```
 select * from a FULL OUTER JOIN b on a.a = b.b;
 
+
+
  a   |  b
 -----+-----
    1 | null
@@ -72,3 +74,5 @@ select * from a FULL OUTER JOIN b on a.a = b.b;
 null |    6
 null |    5
 ```
+
+![join](https://user-images.githubusercontent.com/94466572/173870234-d9cbdfb9-40fe-43e7-ba6e-db0061efc823.png)
