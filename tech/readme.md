@@ -21,7 +21,7 @@
 - Docker 왜 썼는지?
 - 본인이 생각하기에 Database의 부하와 Application의 부하를 어떤 기준으로 나눌 것 같은지?
 - 만약에 일을 하게 됐을 때 그 팀이 코드 리뷰에 대해 보수적이고 페어를 완강하게 거부하는 곳이라면 어떻게 대처할 건지
-- Deep Copy와 Shallow Copy에 대해 설명해주세요.
+- [Deep Copy와 Shallow Copy에 대해 설명해주세요.(https://github.com/jihodaddy/backend_skill/blob/d6baf6a523d16cd7ea479bea0d159710afd27cdd/tech/Copy_deep_shallow.md)]
 - OAuth 의 흐름에 대해 설명해주세요.
 - 객체를 나누는 기준이 무엇인가?
 - 커밋 컨벤션에서 feat, chore, refactor 등. 각각 어떤 기준으로 나누어 사용했는지?
