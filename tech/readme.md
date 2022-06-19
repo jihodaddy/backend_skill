@@ -74,7 +74,7 @@
 - MyISAM과 InnoDB의 차이점
 - 단방향 암호화의 장점이 뭐냐
 - GET/POST의 차이는?
-- HTTP vs. HTTPS의 차이는?
+- [HTTP vs. HTTPS의 차이는?](https://github.com/jihodaddy/backend_skill/blob/4161da8fb0cd01539645374c1f65ba3305198e66/tech/Http_https.md)
 - XSS 에 대해 설명해주세요
 - XSS 를 막기 위해서는 어떤 방법이 있는지?
 - 인증 토큰 방식과 세션을 통한 인증 방식은 어떤 점에서 다른지?
