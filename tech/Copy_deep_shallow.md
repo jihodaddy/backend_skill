@@ -20,7 +20,6 @@ b배열을 수정하면, a배열까지 같이 수정되는 상황이 됩니다.
 깊은 복사 (Deep Copy)
 
 ```
-
 Object.clone()
 public class Array_Copy{
     public static void main(String[] args)  {
@@ -35,7 +34,6 @@ Array.clone()을 사용하면 배열을 쉽게 복사할 수 있습니다. 가�
 Arrays.copyOf()
 
 ```
-
 import java.util.Arrays;
 
 public class Array_Copy{
