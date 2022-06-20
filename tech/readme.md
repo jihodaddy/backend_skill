@@ -45,7 +45,7 @@
 - 최근에 하신 프로젝트가 어떤 구조로 되어있는지 그림으로 그리면서 설명해주세요.
 - 프로젝트에서 Git flow 적용 하셨다고 하셨는데, 어떤 식으로 하셨는지 설명해주세요.
 - 어떤 장점, 단점이 있는지?
-- DTO가 무엇이죠?
+- [DTO가 무엇이죠?(https://github.com/jihodaddy/backend_skill/blob/cb85b63658d99cb42953c3ef6403917c7910b420/tech/Dto.md)]
 - Presentation - Application - Domain Layer를 나눈 기준은?
 - 각 Layer가 하는 역할은?
 - DB Optimizer
