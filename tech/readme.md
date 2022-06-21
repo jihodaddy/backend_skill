@@ -78,7 +78,7 @@
 - XSS 에 대해 설명해주세요
 - XSS 를 막기 위해서는 어떤 방법이 있는지?
 - 인증 토큰 방식과 세션을 통한 인증 방식은 어떤 점에서 다른지?
-- 백엔드 단에서 성능을 올릴 수 있는 방법은?
+- [백엔드 단에서 성능을 올릴 수 있는 방법은?](https://github.com/jihodaddy/backend_skill/blob/dbcf2c6fa08d711680b8be707b68e55518f6bd54/tech/Backend_performance.md)
 - 데이터베이스에서 왜 여러 테이블을 두는지?
 - 최근에 했던 프로젝트 구조를 화이트보드 이용해서 설명해주세요.
 - [Inner Join과 Outer Join에 대해 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/34fd47ac4877e8de0ca030d22c64fcb663403707/tech/Inner_outer_join.md)
