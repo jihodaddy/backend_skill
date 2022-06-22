@@ -1,7 +1,7 @@
 # 일반 기술 질문
 
 - [REST](https://github.com/jihodaddy/backend_skill/blob/1c4054282bbdecd85a8ed37f887955c1202c8d13/tech/Rest.md)
-- 동등성과 동일성의 차이를 아는지?
+- [동등성과 동일성의 차이를 아는지?](https://github.com/jihodaddy/backend_skill/blob/b6a7b9104713e50cb095372bc07614362307c01c/tech/Identity_equality.md)
 - 세션이 뭔가요? 서버 여러 대일 때 세션을 어떻게 처리하죠?
 - [서블릿이 뭔가요?](https://github.com/jihodaddy/backend_skill/blob/1c4054282bbdecd85a8ed37f887955c1202c8d13/tech/servlet.md)
 - 데이터베이스 인덱스 동작 과정
