@@ -70,7 +70,7 @@
 - Connection Pool의 최대치가 1000개, WAS가 5개라고 해보자. 각 WAS는 200개씩의 Connection을 가지는지? 그렇다면 6번째 WAS가 추가된다면 6번째에는 아무런 Connection도 할당되지 않는지?
 - [SOLID중 한가지 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/1c4054282bbdecd85a8ed37f887955c1202c8d13/tech/Solid_principle.md)
 - 재귀의 장점, 단점?
-- Sync vs. Async 차이
+- [Sync vs. Async 차이](https://github.com/jihodaddy/backend_skill/blob/f01fd93a6d7f39bf1b43dc875d91a58d65308bc8/tech/Sync_ansync.md)
 - MyISAM과 InnoDB의 차이점
 - 단방향 암호화의 장점이 뭐냐
 - GET/POST의 차이는?
