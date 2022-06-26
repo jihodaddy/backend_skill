@@ -71,11 +71,9 @@ Stream은 지연 연산을 수행합니다
 Stream은 병렬 실행이 가능합니다
 
 ### Stream 의 종류
-
-Stream의 종류
-
-| Stream <T> | 범용 Stream |
-
+|종류 | 설명 |
+| --- | --- |
+| Stream < T > | 범용 Stream |
 | IntStream | 값 타입이 Int인 Stream |
 | LongStream | 값 타입이 Long인 Stream |
 | oubleStream | 값 타입이 Double인 Stream |
