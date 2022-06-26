@@ -95,17 +95,19 @@ Stream은 병렬 실행이 가능합니다
 
 ### Stream의 최종 연산 명령어
 
-| void forEach(Consumer <? super T> action)| Stream 의 각 요소에 지정된 작업 수행|
-| long count()| Stream 의 요소 개수 |  
-| Optional < T > sum (Comparator <? super T> comparator)| Stream 의 요소 합|
-| Optional < T > max (Comparator <? super T> comparator)| Stream 요소의 최대 값|
-| Optional < T > min (Comparator <? super T> comparator)| Stream 요소의 최소 값|
-| Optional < T > findAny()| Stream 요소의 랜덤 요소|
-| Optional < T > findFirst()| Stream 의 첫 번째 요소|
-| boolean allMatch(Pradicate < T > p)| Stream 의 값이 모두 만족하는지 boolean 반환|
-| boolean anyMatch(Pradicate < T > p)| Stream 의 값이 하나라도 만족하는지 boolean 반환|
-| boolean noneMatch(Pradicate < T > p)| Stream 의 값이 하나라도 만족하지않는지 boolean 반환 |
-| Object[] toArray()| Stream 의 모든 요소를 배열로 반환|
+| 종류                                                   | 설명                                                |
+| ------------------------------------------------------ | --------------------------------------------------- |
+| void forEach(Consumer <? super T> action)              | Stream 의 각 요소에 지정된 작업 수행                |
+| long count()                                           | Stream 의 요소 개수                                 |
+| Optional < T > sum (Comparator <? super T> comparator) | Stream 의 요소 합                                   |
+| Optional < T > max (Comparator <? super T> comparator) | Stream 요소의 최대 값                               |
+| Optional < T > min (Comparator <? super T> comparator) | Stream 요소의 최소 값                               |
+| Optional < T > findAny()                               | Stream 요소의 랜덤 요소                             |
+| Optional < T > findFirst()                             | Stream 의 첫 번째 요소                              |
+| boolean allMatch(Pradicate < T > p)                    | Stream 의 값이 모두 만족하는지 boolean 반환         |
+| boolean anyMatch(Pradicate < T > p)                    | Stream 의 값이 하나라도 만족하는지 boolean 반환     |
+| boolean noneMatch(Pradicate < T > p)                   | Stream 의 값이 하나라도 만족하지않는지 boolean 반환 |
+| Object[] toArray()                                     | Stream 의 모든 요소를 배열로 반환                   |
 
 ### collector 연산
 
