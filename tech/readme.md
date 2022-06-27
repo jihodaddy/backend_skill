@@ -92,7 +92,7 @@
 - Blue-Green 배포에 대해 설명해주세요.
 - 구현 하신 부분에서 개선할 점이 있다면 어떤 것이 있는지?
 - 그 외에 무중단 배포 방법 아시는 것 설명해주세요.
-- 쿠키에 대해서 설명해주세요.
+- [쿠키에 대해서 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/3cdc4f44adf4054533e22ca557e87e00438c53bf/tech/Cookie.md)
 - 로컬 스토리지에 대해 설명해주세요.
 - 프론트와 API 서버간에 어떻게 통신을 하는지, 구현을 어떻게 했는지 설명해주세요
 - [HTTP Method에 대해서 각각 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/e3c66a4d390bca80748044dac6aeee7de57f87fe/tech/Http_method.md)
