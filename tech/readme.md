@@ -25,7 +25,7 @@
 - OAuth 의 흐름에 대해 설명해주세요.
 - 객체를 나누는 기준이 무엇인가?
 - 커밋 컨벤션에서 feat, chore, refactor 등. 각각 어떤 기준으로 나누어 사용했는지?
-- OOP가 무엇인가요?
+- [OOP가 무엇인가요?(https://github.com/jihodaddy/backend_skill/blob/94be14f17b4f7d350508c9b4a8f9105d63adc4c0/tech/OOP.md)]
 - OOP를 썼을 때 어떤 점이 좋았고 안좋았는지?
 - OOP를 잘하기 위해 어떤 노력을 했는지?
 - 객체를 나누다 보면 오히려 코드가 보기 힘들지 않나?
