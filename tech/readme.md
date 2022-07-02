@@ -184,7 +184,7 @@
 - Java에서 람다가 무엇인지 말씀해주세요.
 - JVM 기반 언어의 특징을 설명해주세요.
 - Java 8 에서 나온 Date, Time API에 대해 아는대로 말씀해주세요.
-- Overloading, Overriding을 각각 설명해주세요.
+- [Overloading, Overriding을 각각 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/fb1375178460a05a6d66b030007d510b739f2597/tech/Overloading_overriding.md)
 - String을 ==로 비교하면 안되는 이유를 설명해주세요.
 - Integer.MIN_VALUE에는 어떤 값이 들어가있나요? 어떤 컴퓨터에서 찍어도 동일한 값인가요?
 - JUnit 4 와 JUnit 5의 차이를 설명해주세요.
