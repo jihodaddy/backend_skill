@@ -31,7 +31,7 @@
 - 객체를 나누다 보면 오히려 코드가 보기 힘들지 않나?
 - 클린 코드는 무엇인가요?
 - 왜 코드는 클린해야 하죠?
-- Test코드는 왜 짜야 합니까?
+- [Test코드는 왜 짜야 합니까?](https://github.com/jihodaddy/backend_skill/blob/42d729e6e1afbd341afbe1c1313b463f5a276f49/tech/Test_code.md)
 - Mock을 사용한 이유는?
 - 기능이 정상 동작하려면 데이터베이스(외부)를 의존해야 하는데 왜 이 의존을 끊으려고 하는지?
 - 사전에서 검색을 제공하는 Application을 만들건데 어떤 자료구조를 쓰실 건가요?
