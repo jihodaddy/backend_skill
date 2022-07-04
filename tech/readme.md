@@ -41,7 +41,7 @@
 - 이진 트리에 대해 설명 해주세요.
 - Binary Search Tree에 대해 설명해주세요.
 - 브라우저에서 서버 응답까지의 흐름
-- CI/CD 에 대해 각각 설명해주세요.
+- [CI/CD 에 대해 각각 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/c3347e6ad60d11eb27005a86b2040d4e0b1b9123/tech/CI_CD.md)
 - 최근에 하신 프로젝트가 어떤 구조로 되어있는지 그림으로 그리면서 설명해주세요.
 - 프로젝트에서 Git flow 적용 하셨다고 하셨는데, 어떤 식으로 하셨는지 설명해주세요.
 - 어떤 장점, 단점이 있는지?
