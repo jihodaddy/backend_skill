@@ -51,7 +51,7 @@
 - DB Optimizer
 - 아는 정렬 알고리즘 설명해주세요
 - 그 정렬 알고리즘의 시간복잡도는 어떻게 되나요
-- 프로세스와 쓰레드의 차이점은?
+- [프로세스와 쓰레드의 차이점은?](https://github.com/jihodaddy/backend_skill/blob/1c1d7ecece27c932e87c554ed1bf0609317a5cfe/tech/Process_thread.md)
 - PCB에 저장되는 정보는 어떤 것들이 있나요?
 - Context Switching에 대해 설명해 주세요.
 - TCP 와 UDP의 차이점에 대해 설명해 주세요.
