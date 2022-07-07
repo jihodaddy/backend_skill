@@ -10,7 +10,7 @@
 - TDD에 대해 어떻게 생각하시나요?
 - TDD가 무엇인가요?
 - TDD의 장, 단점?
-- PreparedStatment와 Statement의 차이는 무엇인가요?
+- [PreparedStatment와 Statement의 차이는 무엇인가요?](https://github.com/jihodaddy/backend_skill/blob/a7c9ea6a405db51200984213d8a8f469990442af/tech/PreparedStatement_Statement.md)
 - 전 프로젝트에서 배포 구조 설명해주세요.
 - 그 방법으로 하면 완전한 무중단 배포가 구현이 될까요?
 - nginx가 어떤 방식으로 로드밸런싱을 할 지 설명해주세요.
@@ -21,11 +21,11 @@
 - Docker 왜 썼는지?
 - 본인이 생각하기에 Database의 부하와 Application의 부하를 어떤 기준으로 나눌 것 같은지?
 - 만약에 일을 하게 됐을 때 그 팀이 코드 리뷰에 대해 보수적이고 페어를 완강하게 거부하는 곳이라면 어떻게 대처할 건지
-- [Deep Copy와 Shallow Copy에 대해 설명해주세요.(https://github.com/jihodaddy/backend_skill/blob/d6baf6a523d16cd7ea479bea0d159710afd27cdd/tech/Copy_deep_shallow.md)]
+- [Deep Copy와 Shallow Copy에 대해 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/d6baf6a523d16cd7ea479bea0d159710afd27cdd/tech/Copy_deep_shallow.md)
 - [OAuth 의 흐름에 대해 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/5c073679ed77aca88898548b1b242e576aa6a6bf/tech/OAuth.md)
 - 객체를 나누는 기준이 무엇인가?
 - 커밋 컨벤션에서 feat, chore, refactor 등. 각각 어떤 기준으로 나누어 사용했는지?
-- [OOP가 무엇인가요?(https://github.com/jihodaddy/backend_skill/blob/94be14f17b4f7d350508c9b4a8f9105d63adc4c0/tech/OOP.md)]
+- [OOP가 무엇인가요?](https://github.com/jihodaddy/backend_skill/blob/94be14f17b4f7d350508c9b4a8f9105d63adc4c0/tech/OOP.md)
 - OOP를 썼을 때 어떤 점이 좋았고 안좋았는지?
 - OOP를 잘하기 위해 어떤 노력을 했는지?
 - 객체를 나누다 보면 오히려 코드가 보기 힘들지 않나?
