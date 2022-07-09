@@ -8,7 +8,7 @@
 - 캐시가 무엇인가요? redis 같은 걸 캐싱 서버로 사용해보신적 있으신가요?
 - Call by value와 Call by reference 차이
 - TDD에 대해 어떻게 생각하시나요?
-- TDD가 무엇인가요?
+- [TDD가 무엇인가요?](https://github.com/jihodaddy/backend_skill/blob/85578f1f4b071f39bbfcf344632f2f5c26053665/tech/Tdd.md)
 - TDD의 장, 단점?
 - [PreparedStatment와 Statement의 차이는 무엇인가요?](https://github.com/jihodaddy/backend_skill/blob/a7c9ea6a405db51200984213d8a8f469990442af/tech/PreparedStatement_Statement.md)
 - 전 프로젝트에서 배포 구조 설명해주세요.
