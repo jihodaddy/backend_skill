@@ -45,7 +45,7 @@
 - 최근에 하신 프로젝트가 어떤 구조로 되어있는지 그림으로 그리면서 설명해주세요.
 - 프로젝트에서 Git flow 적용 하셨다고 하셨는데, 어떤 식으로 하셨는지 설명해주세요.
 - 어떤 장점, 단점이 있는지?
-- [DTO가 무엇이죠?(https://github.com/jihodaddy/backend_skill/blob/cb85b63658d99cb42953c3ef6403917c7910b420/tech/Dto.md)]
+- [DTO가 무엇이죠?](https://github.com/jihodaddy/backend_skill/blob/cb85b63658d99cb42953c3ef6403917c7910b420/tech/Dto.md)
 - Presentation - Application - Domain Layer를 나눈 기준은?
 - 각 Layer가 하는 역할은?
 - DB Optimizer
@@ -64,7 +64,7 @@
 - DDD에 대해 알거나 공부해봤는지?
 - DDD에서 Domain이 무엇인지?
 - [CQRS, 이벤트 소싱에 대해 아는지?](https://github.com/jihodaddy/backend_skill/blob/6c0758b3568d13a7e1a17213ab351aee370cbe1d/tech/CQRS.md)
-- 최근 했던 프로젝트의 패키지 구조에 대해 설명해주세요. (선호하는 패키지 구조)
+- [최근 했던 프로젝트의 패키지 구조에 대해 설명해주세요. (선호하는 패키지 구조)](https://github.com/jihodaddy/backend_skill/blob/8d3357b7c3c111d37c5b9db458685fefedab9a55/tech/Package_structure.md)
 - Connection Pool을 쓰는 이유는? 단순히 커넥션을 새로 만드는 것과 차이는?
 - 그러면 Connection을 만드는 시간을 제외하고는 다른 장점은 없나요?
 - Connection Pool의 최대치가 1000개, WAS가 5개라고 해보자. 각 WAS는 200개씩의 Connection을 가지는지? 그렇다면 6번째 WAS가 추가된다면 6번째에는 아무런 Connection도 할당되지 않는지?
