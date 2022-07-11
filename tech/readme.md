@@ -120,7 +120,7 @@
 
 # Spring 질문
 
-- Spring에서 DI나 IOC 개념을 설명해주세요.
+- [Spring에서 DI나 IOC 개념을 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/107ea84d33f781953742b69d5cab4abb18e7380c/tech/DI_IOC.md)
 - Spring에서 Service, Controller, Repository annotation의 차이점
 - Controller, RestController는 뭐가 다른가요? 응답이 어떻게 다른가요?
 - Spring에서 서비스와 컴포넌트의 차이
