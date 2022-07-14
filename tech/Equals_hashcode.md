@@ -4,6 +4,8 @@
 - equals(Object)가 두 객체를 같다고 판단했다면(equals), 두 객체의 hashCode는 똑같은 값을 반환해야 한다.
 - equals(Object)가 두 객체를 다르게 판단했더라고, 두 객체의 hashCode가 서로 다른 값을 반환할 필요는 없다. 단, 다른 객체에 대해서는 다른 값을 반환해야 해시테이블의 성능이 좋아진다.
 
+<span style="background-color:#fff5b1;">해시 코드는 반드시 구현해야 하는 것은 아니다. 하지만 두 번째 규약에 의하면 Object.equals() 메서드를 재정의 했다면 hashCode도 반드시 재정의해야 한다.</span>
+
 ### PhoneNumber 클래스
 
 ```java
@@ -124,3 +126,5 @@ public int hashCode() {
 ```
 
 그렇지만 hashCode가 스레드 안전성을 갖도록 잘 구현해야 할 것이다.
+
+[참고](https://camel-context.tistory.com/52)
