@@ -173,7 +173,7 @@
 - Checked Exception은 언제 사용하나요?
 - Unchecked, Checked Exception 차이가 뭔가요?
 - Custom Exception은 다 RuntimeException 상속 했는데, 특별한 이유가 있는지?
-- equals and hashcode 재구현한 이유?
+- [equals and hashcode 재구현한 이유?](https://github.com/jihodaddy/backend_skill/blob/8d535af1bc8d29ee2e405278230487ccf71d686a/tech/Equals_hashcode.md)
 - JVM과 GC에 대해 설명해주세요.
 - GC가 언제 동작하는지 설명해주세요.
 - [JUnit의 생명주기에 대해 아는지?](https://github.com/jihodaddy/backend_skill/blob/c4852900ca414a0546ecd0cf00e481e64c465461/tech/Junit.md)
