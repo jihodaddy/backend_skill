@@ -123,7 +123,7 @@
 - [Spring에서 DI나 IOC 개념을 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/107ea84d33f781953742b69d5cab4abb18e7380c/tech/DI_IOC.md)
 - Spring에서 Service, Controller, Repository annotation의 차이점
 - Controller, RestController는 뭐가 다른가요? 응답이 어떻게 다른가요?
-- Spring에서 서비스와 컴포넌트의 차이
+- [Spring에서 서비스와 컴포넌트의 차이](https://github.com/jihodaddy/backend_skill/blob/b06b3b489984d2fee500e6b5d3ecb25f0a25d4b6/tech/Service_Component.md)
 - 다른 프레임워크들도 많이 있는데, 특별히 Spring boot를 사용한 이유가 있는지?
 - IoC Container 직접 만든다면 어떻게 구현하실 생각인가요?
 - [스프링에서 빈 등록 방법](https://github.com/jihodaddy/backend_skill/blob/dafe74a1ccf435234d91736ecfdeda157554c7d6/tech/Spring_bean.md)
