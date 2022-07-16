@@ -145,7 +145,7 @@
 - [Hibernate는 뭘까요?](https://github.com/jihodaddy/backend_skill/blob/d862b71170af8d3f8d416bc314fe44819d417a4f/tech/Hibernate.md)
 - Open Session In View
 - JPA 사용할때랑 직접 SQL 사용할때랑 어떤 차이?
-- @transactional 동작 과정
+- [@transactional 동작 과정]
 - readOnly 붙인 이유
 - [JPA FetchType](https://github.com/jihodaddy/backend_skill/blob/5fabb1447c452d2142cb4c46fa8af94f95b1764d/tech/Jpa_fetch.md)
 - LAZY와 EAGER 각각 어떤 기준으로 사용하시는지?
