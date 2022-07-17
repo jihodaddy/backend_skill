@@ -16,6 +16,14 @@ begin, commit 을 자동으로 수행해준다.
 - 영속성(Durability)
   트랜잭션을 성공적으로 마치면 결과가 항상 저장되어야 한다.
 
+## 스프링이 Transaction 코드를 넣는 법
+
+- @Transactional은 Spring AOP를 기반으로 동작한다.
+- @Transactional이 적용되면 Transaction 처리를 Dynamic Proxy 객체에 대신 위임한다.
+- Dynamic Proxy 객체는 target이 상속하고 있는 인터페이스를 상속 후 추상 메서드를 구현하며 내부적으로 target 메서드 호출 전후로 transaction 처리를 수행한다.
+- Controller는 target 메서드를 호출하는 것으로 생각하지만 실제로는 proxy의 메서드를 호출하게 된다.
+- Target 객체가 인터페이스를 상속하고 있지 않다면, CGLib를 사용하여 인터페이스 대신 target 객체를 상속하는 proxy 객체를 만든다.
+
 ## 트랜잭션 처리 방법?
 
 스프링에서는 간단하게 어노테이션 방식으로 @Transactional을 메소드, 클래스, 인터페이스 위에 추가하여 사용하는 방식이 일반적이다. 이 방식을 선언적 트랜잭션이라 부르며, 적용된 범위에서는 트랜잭션 기능이 포함된 프록시 객체가 생성되어 자동으로 commit 혹은 rollback을 진행해준다.
@@ -199,9 +207,3 @@ public void addUser(UserDTO dto) throws Exception {
 (rollbackFor = Exception.class) 를 붙여야 한다는 것을 깨달았다.
 그 이유는 Checked Exception 같은 경우는 예상된 에러이며
 Unchecked Exception, Error 같은 경우는 예상치 못한 에러이기 때문이란 것을 알게 되었다.
-
-결론
-자바와 스프링, 스프링부트 등 이 쪽을 공부한 지 벌써 5~6개월이 다 되어간다.
-하지만 아직 배워야 할 것들이 많고, 내가 쓰고 있는 것들도 무슨 기능인지도 모르고 쓰는 경우가
-많다는 걸 깨닫고 하나하나 배워 나아가는 중이다.
-앞으로도 열심히 해야겠다.
