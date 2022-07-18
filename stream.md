@@ -80,4 +80,25 @@ List<String> strList = lists.stream()
 3. 최종 연산
    사용법: Collections같은 객체 집합.스트림생성().중개연산().최종연산();
 
+### 예제
+
+예제에서 사용하는 Person 클래스는 아래와 같이 미리 작성되있음을 가정
+
+```java
+class Person {
+    private String name;
+    private int age;
+    private String phoneNumber;
+
+    public Person(String name, int age, String phoneNumber) {
+        this.name = name;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+    }
+
+    // getter, setter 생략
+}
+```
+
 [참조 블로그](https://wakestand.tistory.com/419)
+[예제참조](https://madplay.github.io/post/java-streams-examples)
