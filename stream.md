@@ -242,5 +242,228 @@ Stream<String> stream = Stream.concat(list1.stream(), list2.stream());
 Stream<Object> empty = Stream.empty();
 ```
 
+# 중간 연산자를
+
+예제코드
+
+```java
+List<String> list = List.of("a", "ab", "abc", "abcd");
+
+List<String> result = list.stream()
+        .filter(x -> { // 중간 연산 1
+            System.out.println(x + " in filter method");
+            return x.length() >= 1;
+        }).map(x -> { // 중간 연산 2
+            System.out.println(x + " in map method");
+            return x.toUpperCase();
+        }).limit(2) // 중간 연산 3
+        .collect(Collectors.toList()); // 나중에 살펴볼 단말 연산
+
+System.out.println(result);
+// a in filter method
+// a in map method
+// ab in filter method
+// ab in map method
+// [A, AB]
+```
+
+## filter 메서드로 필터링
+
+```java
+List<String> list = List.of("kim", "taeng");
+list.stream().filter(s -> s.length() == 5);
+// "taeng"
+
+// without lambda expression
+list.stream().filter(new Predicate<String>() {
+    @Override
+    public boolean test(String s) {
+        return s.length() == 5;
+    }
+});
+```
+
+## map메서드로 특정 형태로 변환
+
+```java
+List<String> list = List.of("mad", "play");
+list.stream().map(s -> s.toLowerCase());
+// "MAD", "PLAY"
+
+// without lambda expression
+list.stream().map(new Function<String, String>() {
+    @Override
+    public String apply(String s) {
+        return s.toLowerCase();
+    }
+});
+```
+
+## 기본 타입에 특화된 스트림으로 변환
+
+박싱(Boxing) 비용을 피할 수 있도록 기본 데이터 타입에 특화된 스트림으로 변환할 수 있습니다.
+`mapToInt, mapToLong, mapToDouble` 메서드를 사용하면 각각 `IntStream, LongStream, DoubleStream` 으로 변환할 수 있습니다.
+
+```java
+// IntStream 예
+List<String> list = List.of("0", "1");
+IntStream intStream = list.stream()
+        .mapToInt(value -> Integer.parseInt(value));
+intStream.forEach(System.out::println);
+// 숫자 0, 1 출력
+
+// without lambda expression
+list.stream().mapToInt(new ToIntFunction<String>() {
+    @Override
+    public int applyAsInt(String value) {
+        return Integer.parseInt(value);
+    }
+});
+```
+
+## flatmap 메서드로 단일 스트림 변환
+
+flatmap 메서드는 중첩된 구조를 한 단계 없애고 단일 원소 스트림으로 만들어줍니다.
+
+```java
+List<String> list1 = List.of("mad", "play");
+List<String> list2 = List.of("kim", "taeng");
+List<List<String>> combinedList = List.of(list1, list2);
+
+List<String> streamByList = combinedList.stream()
+        .flatMap(list -> list.stream())
+        .collect(Collectors.toList());
+
+// mad, play, kim, taeng
+System.out.println(streamByList);
+
+// 2차원 배열
+String[][] arrs = new String[][]{
+        {"mad", "play"}, {"kim", "taeng"}
+};
+
+List<String> streamByArr = Arrays.stream(arrs)
+        .flatMap(arr -> Arrays.stream(arr))
+        .collect(Collectors.toList());
+
+// mad, play, kim, taeng
+System.out.println(streamByArr);
+```
+
+## distinct 메서드로 중복 제거
+
+distinct 메서드는 스트림 내의 요소의 중복을 제거합니다. 기본형 타입의 경우 값(value)으로 비교하지만 객체의 경우 Object.equals 메서드로 비교합니다.
+
+```java
+// 예시를 위한 클래스 정의
+class Foo {
+    private String bar;
+    public Foo(String bar) {
+        this.bar = bar;
+    }
+
+    public String toString() {
+        return "bar: " + bar;
+    }
+}
+
+public void someMethod() {
+    IntStream stream = Arrays.stream(
+            new int[]{1, 2, 2, 3, 3});
+
+    // 1, 2, 3
+    stream.distinct()
+            .forEach(System.out::println);
+
+    Foo foo1 = new Foo("123");
+    Foo foo2 = new Foo("123");
+    List<Foo> list = List.of(foo1, foo2, foo1);
+
+    // bar: 123
+    // bar: 123
+    list.stream().distinct()
+        .forEach(System.out::println);
+}
+```
+
+## sorted 메서드로 정렬하기
+
+sorted 메서드를 이용하여 스트림 내 요소를 정렬할 수 있습니다.
+
+```java
+// 1, 2, 3
+List.of(1, 2, 3).stream()
+    .sorted();
+
+// 3, 2, 1
+List.of(1, 2, 3).stream()
+    .sorted(Comparator.reverseOrder());
+```
+
+다만 IntStream, DoubleStream, LongStream과 같은 기본형 특화 스트림의 경우 sorted 메서드에 인자를 넘길 수 없습니다. 따라서 boxed 메서드를 이용해 객체 스트림으로 변환 후 사용해야 합니다.
+
+```java
+// 2, 1, 0
+IntStream.range(0, 3)
+        .boxed() // boxing
+        .sorted(Comparator.reverseOrder());
+```
+
+## peek 메서드로 각각의 요소에 연산 수행하기
+
+peek 메서드는 스트림 내의 각각의 요소를 대상으로 특정 연산을 수행하게 합니다. 원본 스트림에서 요소를 소모하지 않기 때문에 중간 연산 사이의 결과를 확인할 때 유용합니다. 주의할 점은 peek 연산은 단말 연산이 수행되지 않으면 실행조차 되지 않습니다.
+
+```java
+List<Integer> otherList = new ArrayList<>();
+List.of(1, 2, 3).stream()
+        .limit(2)
+        .peek(i -> {
+            // 실제로는 사용하면 안된다.
+            otherList.add(i);
+        })
+        .forEach(System.out::println);
+
+// 1, 2
+System.out.println(otherList);
+
+// 단말 연산인 forEach가 없으면 otherList는 비어있다.
+```
+
+## limit 메서드로 개수 제한하기
+
+limit 메서드를 사용하면 스트림 내의 요소 개수를 제한할 수 있습니다.
+
+```java
+List<String> list = List.of("a", "b", "c").stream()
+        .limit(2).collect(Collectors.toList());
+
+// a, b
+System.out.println(list);
+Java
+
+
+skip 메서드로 특정 요소 생략하기
+skip 메서드를 사용하면 스트림 내의 첫 번째 요소부터 인자로 전달된 개수 만큼의 요소를 제외한 나머지 요소로 구성된 새로운 스트림을 리턴합니다.
+
+List<String> list = Arrays.stream(new String[]{"a", "b", "c"})
+        .skip(2).collect(Collectors.toList());
+
+// c
+System.out.println(list);
+```
+
+## boxed 메서드로 객체 스트림으로 변환하기
+
+`IntStream, LongStream, DoubleStream`과 같은 기본 타입에 특화된 스트림을 일반 스트림으로 변환할 수 있습니다.
+
+```java
+IntStream intStream = IntStream.range(0, 3);
+
+// 객체 타입의 일반 스트림으로 변환
+Stream<Integer> boxedStream = intStream.boxed();
+```
+
+# 스트림 종료 연산
+
 [참조 블로그](https://wakestand.tistory.com/419)
 [예제참조](https://madplay.github.io/post/java-streams-examples)
