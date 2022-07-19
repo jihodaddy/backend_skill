@@ -100,5 +100,147 @@ class Person {
 }
 ```
 
+# 생성
+
+## 컬렉션(Collection)으로 생성
+
+```java
+//of 메서드는 자바9부터 지원
+List<String> list = List.of("mad","play");
+Stream<String> stream = list.stream();
+```
+
+## 배열(Array)로 생성
+
+`Array.stream`메서드를 사용하여 배열로 스트림 생성
+
+```java
+String[] arr = new String[]{"mad","play"};
+Stream<String> stream = Arrays.stream(arr);
+
+//0번 인덱스만 선택(closed range)
+Stream<String> specificStream = Arrays.stream(arr, 0, 1);
+
+// "mad" 출력
+specificStream.forEach(System.out::println);
+```
+
+## 병렬 스트림 생성
+
+`steam`메서드 대신에 `parallelStream`메서드를 호출하면 병렬 스트림 생성
+
+```java
+List<String> list = List.of("mad", "play", "...");
+Stream<String> stream = list.parallelStream();
+```
+
+## 기본 타입에 특화된 스트림 생성
+
+```java
+// 0, 1, 2
+IntStream intStream = IntStream.range(0, 3);
+
+// 0, 1, 2, 3
+IntStream closedIntStream = IntStream.rangeClosed(0, 3);
+
+// 0, 1, 2
+LongStream longStream = LongStream.range(0, 3);
+
+// 0.0, 0.3
+DoubleStream doubleStream = DoubleStream.of(0, 3);
+```
+
+난수와 같이 랜덤하게 스트림을 생성할 수 있음. 다만 무한대로 생성되므로 `limit`와 같은
+제한 메서들르 사용하여 무한으로 생성되지 않도록 해야함
+
+```java
+// 난수로 스트림 생성, 3개 제한
+IntStream intStream = new Random().ints().limit(3);
+
+// 난수로 스트림 생성, 3개 제한
+DoubleStream doubles = new Random().doubles(3);
+```
+
+## 파일(Files)로 생성
+
+`java.nio.Files`클래스를 이용하여 스트림 생성
+
+```java
+Path path = Paths.get("~");
+Stream<Path> list = Files.list(path);
+
+Path filePath = Paths.get("~.txt");
+Stream<String> lines = Files.lines(path);
+```
+
+## BufferedReader의 lines()로 생성
+
+`java.io.BufferedReader`클래스의 `lines`메서드로 문자열 스트림 생성
+
+```java
+// try-catch-resources
+try (BufferedReader br = new BufferedReader(new FileReader("test.txt"))) {
+    Stream<String> stream = br.lines();
+    // do something
+} catch (Exception e) {
+    // exception handling
+}
+```
+
+## Pattern으로 스트림 생성
+
+```java
+Stream<String> stream = Pattern.compile(",")
+    .splitAsStream("mad,play");
+stream.forEach(System.out::println);
+// mad
+// play
+```
+
+## Stream.builder()로 생성
+
+```java
+// 참고) Stream.builder 메서드 명세
+// public static<T> Builder<T> builder() {
+//     return new Streams.StreamBuilderImpl<>();
+// }
+
+Stream<String> stream = Stream.<String>builder()
+    .add("mad").add("play").build();
+```
+
+## Stream.iterate() 로 생성
+
+```java
+// 0, 1, 2
+Stream<Integer> stream = Stream.iterate(0, x -> x + 1).limit(3);
+```
+
+## Stream.generate() 로 생성
+
+```java
+// 1, 1, 1
+Stream<Integer> stream = Stream.generate(() -> 1).limit(3);
+
+// 난수 3개 저장
+Stream<Double> randomStream = Stream.generate(Math::random).limit(3);
+```
+
+## Stream.concat() 으로 스트림을 연결하여 생성
+
+```java
+List<String> list1 = List.of("mad", "play");
+List<String> list2 = List.of("mad", "life");
+Stream<String> stream = Stream.concat(list1.stream(), list2.stream());
+// mad, play, mad, life
+```
+
+## 비어있는 스트림 생성
+
+```java
+// 빈 스트림 생성
+Stream<Object> empty = Stream.empty();
+```
+
 [참조 블로그](https://wakestand.tistory.com/419)
 [예제참조](https://madplay.github.io/post/java-streams-examples)
