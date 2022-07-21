@@ -169,7 +169,7 @@
 - domain package에 repository, entity 들어있는데 그렇게 한 이유?
 - 그러면 domain은 무엇인가요?
 - Integer 하나만 있는 Vo 객체를 만든 이유는 무엇인가요?
-- 자바 디자인패턴 아는 것 중 하나 설명해주세요.
+- [자바 디자인패턴 아는 것 중 하나 설명해주세요.](https://github.com/jihodaddy/backend_skill/blob/e88875fed6185f70e7c5e95d78ca241cf97ebb99/tech/Design_pattern.md)
 - Checked Exception은 언제 사용하나요?
 - Unchecked, Checked Exception 차이가 뭔가요?
 - Custom Exception은 다 RuntimeException 상속 했는데, 특별한 이유가 있는지?
