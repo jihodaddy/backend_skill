@@ -15,3 +15,7 @@ cq.orderBy(cb.asc(root.get("id")));
 
 TypedQuery<Member> query = em.createQuery(cq);
 ```
+
+## 성능
+
+1. extends / implements 사용하지 않기
