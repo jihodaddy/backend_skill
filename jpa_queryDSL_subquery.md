@@ -69,3 +69,63 @@ List<Tuple> result = queryFactory
   - sql은 데이터를 가져오는 역할에만 집중해야한다.
   - 데이터 포맷은 view 계층에서 해결한다.
   - 비즈니스 로직은 service 계층에서 해결한다.
+
+```java
+@Repository
+public class BuimStdCdCnvtRepoImpl extends QuerydslRepositorySupport implements BuimStdCdCnvtRepoCustom{
+
+	public BuimStdCdCnvtRepoImpl() {
+		super(BuimStdCdCnvt.class);
+	}
+
+	private static final QBuimStdCdCnvt cdcnvt = QBuimStdCdCnvt.buimStdCdCnvt;
+	private static final QBrdhIfLoc loc = QBrdhIfLoc.brdhIfLoc;
+	private static final QBrdhIfEquipTySz equip = QBrdhIfEquipTySz.brdhIfEquipTySz;
+
+	@Override
+	public List<CdCnvtResult> searchCdCnvt(CdCnvtCondition condition) {
+		return from(cdcnvt)
+				.select(Projections.constructor(CdCnvtResult.class,
+						cdcnvt.ptyTpCd.as("party"),
+						cdcnvt.ptyCd.as("partyCode"),
+						cdcnvt.stdCdDivCd.when("L").then("Location")
+													.when("E").then("EQUIP SIZE/type")
+													.otherwise("etc").as("division")
+													,
+						cdcnvt.ptrUseCdNm.as("partyUseCode"),
+						cdcnvt.stdCd.as("standardCode"),
+						new CaseBuilder().when(cdcnvt.stdCdDivCd.eq("L")).then(JPAExpressions.select(loc.locNm)
+																		.from(loc)
+																		.where(cdcnvt.stdCd.eq(loc.locCd)))
+										.when(cdcnvt.stdCdDivCd.eq("E")).then(JPAExpressions.select(equip.equipNm)
+																		.from(equip)
+																		.where(cdcnvt.stdCd.eq(equip.equipTpSzCd)))
+										.otherwise("").as("codeName"),
+						cdcnvt.stdCdCnvtRmk.as("remark")
+//						cdcnvt.regDt.as("registerDate").after(new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(cdcnvt.regDt))
+//						cdcnvt.regDt.as("registerDate")
+						))
+				.where(isParty(condition.getPtyTpCd()),
+						isDivision(condition.getStdCdDivCd())
+						)
+				.fetch();
+
+	}
+
+	public BooleanExpression isParty(String party) {
+		if(StringUtils.isNullOrEmpty(party)) {
+			return cdcnvt.ptyTpCd.contains("");
+		}
+		return cdcnvt.ptyTpCd.eq(party);
+	}
+
+	public BooleanExpression isDivision(String division) {
+		if(StringUtils.isNullOrEmpty(division)) {
+			return cdcnvt.stdCdDivCd.contains("");
+		}
+		return cdcnvt.stdCdDivCd.eq(division);
+	}
+}
+```
+
+[참고 블로그](https://jaime-note.tistory.com/74)
