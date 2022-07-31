@@ -390,4 +390,4 @@ public class PoiReadFormula {
 }
 ```
 
-[참고](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3:fdl:excel)
+[참고](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte3:fdl:exceld)
