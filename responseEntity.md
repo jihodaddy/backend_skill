@@ -36,3 +36,34 @@ public class ResponseEntityController {
 }
 
 ```
+
+
+
+### BaseEntity
+
+```java
+@MappedSuperclass
+@EntityListeners(value = {AuditingEntityListener.class})
+@Getter
+abstract class BaseEntity {
+    @CreatedDate
+    @Column(name = "regdate", updatable = false)
+    private LocalDateTime regDt;
+
+    @LastModifiedDate
+    @Column(name = "moddate")
+    private LocalDateTime modDt;
+}
+
+```
+```java
+@SpringBootApplication
+@EnableJpaAuditing	//BaseEntity클래스의 AuditingEntityListener 활성화 하기 위해 추가
+public class CommonApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CommonApplication.class, args);
+	}
+
+}
+```
